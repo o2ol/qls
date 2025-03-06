@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup
 from utils import notify, common
 
 
-class IKUUU:
+class TASK:
     def __init__(self, index, account):
         self.index = index
         self.name = account.get('name', "")
@@ -97,5 +97,5 @@ if __name__ == '__main__':
         }
     ]' """
     accounts = common.getEnv("ikuuu", env_tips, 1.0)
-    push_msg = [IKUUU(index, account).run() for index, account in enumerate(accounts, start=1)]
+    push_msg = [TASK(index, account).run() for index, account in enumerate(accounts, start=1)]
     notify.send("[{}]".format("ikuuu"), "".join(push_msg))

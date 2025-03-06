@@ -18,7 +18,7 @@ import requests
 from utils import notify, common
 
 
-class IKUUU:
+class TASK:
     def __init__(self, index, account):
         self.blackbox = "lMPHJ1740990140UyG8i6SCIze"
         self.index = index
@@ -155,6 +155,6 @@ if __name__ == '__main__':
         "name":"ls",
         }
     ]' """
-    accounts = common.getEnv("ikuuu", env_tips, 1.2)
-    push_msg = [IKUUU(index, account).run() for index, account in enumerate(accounts, start=1)]
+    accounts = common.getEnv("x_tuhu", env_tips, 1.2)
+    push_msg = [TASK(index, account).run() for index, account in enumerate(accounts, start=1)]
     notify.send("[{}]".format("ikuuu"), "".join(push_msg))
